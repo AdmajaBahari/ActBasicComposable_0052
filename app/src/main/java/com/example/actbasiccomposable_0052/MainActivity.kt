@@ -21,7 +21,7 @@ class MainActivity : ComponentActivity() {
             ActBasicComposable_0052Theme {
                 Scaffold(modifier = Modifier.fillMaxSize()) { innerPadding ->
                     Text(
-                        text = "Loginn",
+                        text = "Login",
                         modifier = Modifier.padding(innerPadding)
                     )
                 }
