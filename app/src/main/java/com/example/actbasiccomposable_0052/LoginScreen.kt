@@ -42,6 +42,15 @@ fun LoginScreen(modifier: Modifier = Modifier) {
             fontSize = 48.sp,
             fontWeight = FontWeight.ExtraBold
         )
+            Text(
+                text = "Silahkan masuk untuk melanjutkan",
+                color = PinkText,
+                fontSize = 16.sp,
+                fontStyle = FontStyle.Italic,
+                fontFamily = FontFamily.Cursive
+            )
+
+            Spacer(modifier = Modifier.height(24.dp))
         }
     }
 }
