@@ -36,6 +36,12 @@ fun LoginScreen(modifier: Modifier = Modifier) {
             horizontalAlignment = Alignment.CenterHorizontally,
             verticalArrangement = Arrangement.Center
         ) {
+            Text(
+            text = "Login",
+            color = YellowLogin,
+            fontSize = 48.sp,
+            fontWeight = FontWeight.ExtraBold
+        )
         }
     }
 }
