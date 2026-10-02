@@ -81,6 +81,15 @@ fun LoginScreen(modifier: Modifier = Modifier) {
                 fontSize = 24.sp,
                 fontWeight = FontWeight.Bold
             )
+
+            Spacer(modifier = Modifier.height(4.dp))
+
+            Box(
+                modifier = Modifier
+                    .width(280.dp)
+                    .height(2.dp)
+                    .background(YellowLogin)
+            )
         }
     }
 }
