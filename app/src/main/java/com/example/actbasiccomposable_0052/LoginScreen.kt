@@ -10,17 +10,29 @@ import androidx.compose.runtime.Composable
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.draw.clip
+import androidx.compose.ui.geometry.Offset
 import androidx.compose.ui.graphics.Color
+import androidx.compose.ui.graphics.Shadow
 import androidx.compose.ui.layout.ContentScale
 import androidx.compose.ui.res.painterResource
+import androidx.compose.ui.text.TextStyle
 import androidx.compose.ui.text.font.FontFamily
 import androidx.compose.ui.text.font.FontStyle
 import androidx.compose.ui.text.font.FontWeight
+import androidx.compose.ui.unit.Dp
+import androidx.compose.ui.unit.TextUnit
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 
 private val YellowLogin = Color(0xFFFFEB3B)
 private val PinkText = Color(0xFFFF8FB8)
+private val LineWidth = 280.dp
+
+private val TextShadow = Shadow(
+    color = Color.Black.copy(alpha = 0.45f),
+    offset = Offset(2f, 2f),
+    blurRadius = 6f
+)
 
 @Composable
 fun LoginScreen(modifier: Modifier = Modifier) {
@@ -41,7 +53,8 @@ fun LoginScreen(modifier: Modifier = Modifier) {
                 text = "Login",
                 color = YellowLogin,
                 fontSize = 48.sp,
-                fontWeight = FontWeight.ExtraBold
+                fontWeight = FontWeight.ExtraBold,
+                style = TextStyle(shadow = TextShadow)
             )
 
             Text(
@@ -66,57 +79,48 @@ fun LoginScreen(modifier: Modifier = Modifier) {
 
             Spacer(modifier = Modifier.height(32.dp))
 
-            Text(
-                text = "Nama",
-                color = YellowLogin,
-                fontSize = 18.sp,
-                fontWeight = FontWeight.Bold
-            )
-
-            Spacer(modifier = Modifier.height(4.dp))
-
-            Text(
-                text = "Admaja Bahari",
-                color = Color.White,
-                fontSize = 24.sp,
-                fontWeight = FontWeight.Bold
-            )
-
-            Spacer(modifier = Modifier.height(4.dp))
-
-            Box(
-                modifier = Modifier
-                    .width(280.dp)
-                    .height(2.dp)
-                    .background(YellowLogin)
-            )
+            InfoField(label = "Nama", value = "Admaja Bahari", valueSize = 24.sp)
 
             Spacer(modifier = Modifier.height(24.dp))
 
-            Text(
-                text = "NIM",
-                color = YellowLogin,
-                fontSize = 18.sp,
-                fontWeight = FontWeight.Bold
-            )
-
-            Spacer(modifier = Modifier.height(4.dp))
-
-            Text(
-                text = "20230140052",
-                color = Color.White,
-                fontSize = 28.sp,
-                fontWeight = FontWeight.Bold
-            )
-
-            Spacer(modifier = Modifier.height(4.dp))
-
-            Box(
-                modifier = Modifier
-                    .width(280.dp)
-                    .height(2.dp)
-                    .background(YellowLogin)
-            )
+            InfoField(label = "NIM", value = "20230140052", valueSize = 28.sp)
         }
+    }
+}
+
+@Composable
+private fun InfoField(
+    label: String,
+    value: String,
+    valueSize: TextUnit,
+    lineWidth: Dp = LineWidth
+) {
+    Column(horizontalAlignment = Alignment.CenterHorizontally) {
+        Text(
+            text = label,
+            color = YellowLogin,
+            fontSize = 18.sp,
+            fontWeight = FontWeight.Bold,
+            style = TextStyle(shadow = TextShadow)
+        )
+
+        Spacer(modifier = Modifier.height(4.dp))
+
+        Text(
+            text = value,
+            color = Color.White,
+            fontSize = valueSize,
+            fontWeight = FontWeight.Bold,
+            style = TextStyle(shadow = TextShadow)
+        )
+
+        Spacer(modifier = Modifier.height(4.dp))
+
+        Box(
+            modifier = Modifier
+                .width(lineWidth)
+                .height(2.dp)
+                .background(YellowLogin)
+        )
     }
 }
