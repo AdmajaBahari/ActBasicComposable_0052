@@ -31,5 +31,11 @@ fun LoginScreen(modifier: Modifier = Modifier) {
             modifier = Modifier.fillMaxSize(),
             contentScale = ContentScale.Crop
         )
+        Column(
+            modifier = Modifier.fillMaxSize(),
+            horizontalAlignment = Alignment.CenterHorizontally,
+            verticalArrangement = Arrangement.Center
+        ) {
+        }
     }
 }
