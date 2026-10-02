@@ -16,8 +16,9 @@ class MainActivity : ComponentActivity() {
         setContent {
             ActBasicComposable_0052Theme {
                 Scaffold(modifier = Modifier.fillMaxSize()) { innerPadding ->
-                    LoginScreen(
-                        //modifier = Modifier.padding(innerPadding)
+                    Scaffold(modifier = Modifier.fillMaxSize()) { innerPadding ->
+                        LoginScreen()
+                    }
                     )
                 }
             }
