@@ -90,6 +90,15 @@ fun LoginScreen(modifier: Modifier = Modifier) {
                     .height(2.dp)
                     .background(YellowLogin)
             )
+
+            Spacer(modifier = Modifier.height(24.dp))
+
+            Text(
+                text = "NIM",
+                color = YellowLogin,
+                fontSize = 18.sp,
+                fontWeight = FontWeight.Bold
+            )
         }
     }
 }
