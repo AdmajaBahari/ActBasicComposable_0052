@@ -31,17 +31,19 @@ fun LoginScreen(modifier: Modifier = Modifier) {
             modifier = Modifier.fillMaxSize(),
             contentScale = ContentScale.Crop
         )
+
         Column(
             modifier = Modifier.fillMaxSize(),
             horizontalAlignment = Alignment.CenterHorizontally,
             verticalArrangement = Arrangement.Center
         ) {
             Text(
-            text = "Login",
-            color = YellowLogin,
-            fontSize = 48.sp,
-            fontWeight = FontWeight.ExtraBold
-        )
+                text = "Login",
+                color = YellowLogin,
+                fontSize = 48.sp,
+                fontWeight = FontWeight.ExtraBold
+            )
+
             Text(
                 text = "Silahkan masuk untuk melanjutkan",
                 color = PinkText,
@@ -57,7 +59,8 @@ fun LoginScreen(modifier: Modifier = Modifier) {
                 contentDescription = "Foto",
                 modifier = Modifier
                     .size(220.dp)
-                    .clip(CircleShape),
+                    .clip(CircleShape)
+                    .border(3.dp, Color.White, CircleShape),
                 contentScale = ContentScale.Crop
             )
 
