@@ -51,6 +51,17 @@ fun LoginScreen(modifier: Modifier = Modifier) {
             )
 
             Spacer(modifier = Modifier.height(24.dp))
+
+            Image(
+                painter = painterResource(id = R.drawable.foto),
+                contentDescription = "Foto",
+                modifier = Modifier
+                    .size(220.dp)
+                    .clip(CircleShape),
+                contentScale = ContentScale.Crop
+            )
+
+            Spacer(modifier = Modifier.height(32.dp))
         }
     }
 }
