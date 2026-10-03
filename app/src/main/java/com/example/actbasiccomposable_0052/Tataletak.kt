@@ -128,6 +128,15 @@ fun TataletakBoxColumnRow(modifier: Modifier) {
                     Text(text = "Col1_Row1_Komponen2")
                     Text(text = "Col1_Row1_Komponen3")
                 }
+                Spacer(modifier = Modifier.height(10.dp))
+                Box(
+                    modifier = modifier
+                        .fillMaxWidth()
+                        .height(300.dp)
+                        .background(color = Color.Cyan),
+                    contentAlignment = Alignment.Center
+                ) {
+                }
             }
         }
     }
