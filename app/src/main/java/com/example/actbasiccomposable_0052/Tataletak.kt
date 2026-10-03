@@ -1,6 +1,5 @@
 package com.example.actbasiccomposable_0052
 
-
 import androidx.compose.foundation.Image
 import androidx.compose.foundation.background
 import androidx.compose.foundation.layout.Arrangement
@@ -124,33 +123,41 @@ fun TataletakBoxColumnRow(modifier: Modifier) {
                     modifier = modifier.fillMaxWidth(),
                     horizontalArrangement = Arrangement.SpaceEvenly
                 ) {
-                    Text(text = "Col1_Row1_Komponen1")
-                    Text(text = "Col1_Row1_Komponen2")
-                    Text(text = "Col1_Row1_Komponen3")
+                    Text(text = "Col1_Row1_Komponen1", fontSize = 10.sp)
+                    Text(text = "Col1_Row1_Komponen2", fontSize = 10.sp)
+                    Text(text = "Col1_Row1_Komponen3", fontSize = 10.sp)
                 }
-                Spacer(modifier = Modifier.height(10.dp))
-                Box(
-                    modifier = modifier
-                        .fillMaxWidth()
-                        .height(300.dp)
-                        .background(color = Color.Cyan),
-                    contentAlignment = Alignment.Center
+                Row(
+                    modifier = modifier.fillMaxWidth(),
+                    horizontalArrangement = Arrangement.SpaceEvenly
                 ) {
-                    Image(
-                        painter = gambar,
-                        contentDescription = null,
-                        contentScale = ContentScale.Fit
-                    )
+                    Text(text = "Col1_Row2_Komponen1", fontSize = 10.sp)
+                    Text(text = "Col1_Row2_Komponen2", fontSize = 10.sp)
+                    Text(text = "Col1_Row2_Komponen3", fontSize = 10.sp)
                 }
-                Text(
-                    text = "My Music",
-                    fontSize = 50.sp,
-                    color = Color.Red,
-                    fontWeight = FontWeight.Bold,
-                    fontFamily = FontFamily.Cursive,
-                    modifier = Modifier.align(Alignment.Center)
-                )
             }
+        }
+        Spacer(modifier = Modifier.height(10.dp))
+        Box(
+            modifier = modifier
+                .fillMaxWidth()
+                .height(300.dp)
+                .background(color = Color.Cyan),
+            contentAlignment = Alignment.Center
+        ) {
+            Image(
+                painter = gambar,
+                contentDescription = null,
+                contentScale = ContentScale.Fit
+            )
+            Text(
+                text = "My Music",
+                fontSize = 50.sp,
+                color = Color.Red,
+                fontWeight = FontWeight.Bold,
+                fontFamily = FontFamily.Cursive,
+                modifier = Modifier.align(Alignment.BottomCenter)
+            )
         }
     }
 }
