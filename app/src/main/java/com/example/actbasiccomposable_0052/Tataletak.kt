@@ -27,5 +27,9 @@ import androidx.compose.ui.unit.sp
 @Composable
 fun TataletakColumn(modifier: Modifier) {
     Column(modifier = modifier) {
+        Text(text = "Komponen1")
+        Text(text = "Komponen2")
+        Text(text = "Komponen3")
+        Text(text = "Komponen4")
     }
 }
