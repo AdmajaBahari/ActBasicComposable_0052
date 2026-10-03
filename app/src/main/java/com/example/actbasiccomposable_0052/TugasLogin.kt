@@ -1,7 +1,6 @@
 package com.example.actbasiccomposable_0052
 
 import androidx.compose.foundation.Image
-import androidx.compose.foundation.background
 import androidx.compose.foundation.border
 import androidx.compose.foundation.layout.*
 import androidx.compose.foundation.shape.CircleShape
@@ -19,14 +18,11 @@ import androidx.compose.ui.text.TextStyle
 import androidx.compose.ui.text.font.FontFamily
 import androidx.compose.ui.text.font.FontStyle
 import androidx.compose.ui.text.font.FontWeight
-import androidx.compose.ui.unit.Dp
-import androidx.compose.ui.unit.TextUnit
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 
 private val YellowLogin = Color(0xFFFFEB3B)
 private val PinkText = Color(0xFFFF8FB8)
-private val LineWidth = 280.dp
 
 private val TextShadow = Shadow(
     color = Color.Black.copy(alpha = 0.45f),
@@ -45,9 +41,10 @@ fun LoginScreen(modifier: Modifier = Modifier) {
         )
 
         Column(
-            modifier = Modifier.fillMaxSize(),
-            horizontalAlignment = Alignment.CenterHorizontally,
-            verticalArrangement = Arrangement.Center
+            modifier = Modifier
+                .fillMaxSize()
+                .padding(top = 48.dp),
+            horizontalAlignment = Alignment.CenterHorizontally
         ) {
             Text(
                 text = "Login",
@@ -65,62 +62,53 @@ fun LoginScreen(modifier: Modifier = Modifier) {
                 fontFamily = FontFamily.Cursive
             )
 
+            Spacer(modifier = Modifier.height(16.dp))
+
+            Image(
+                painter = painterResource(id = R.drawable.logo_umy),
+                contentDescription = "Logo",
+                modifier = Modifier.size(120.dp)
+            )
+
             Spacer(modifier = Modifier.height(24.dp))
+
+            Text(
+                text = "Nama",
+                color = YellowLogin,
+                fontSize = 18.sp,
+                fontWeight = FontWeight.Bold,
+                style = TextStyle(shadow = TextShadow)
+            )
+
+            Text(
+                text = "Admaja Bahari",
+                color = Color.White,
+                fontSize = 24.sp,
+                fontWeight = FontWeight.Bold,
+                style = TextStyle(shadow = TextShadow)
+            )
+
+            Spacer(modifier = Modifier.height(8.dp))
+
+            Text(
+                text = "20230140052",
+                color = Color.White,
+                fontSize = 28.sp,
+                fontWeight = FontWeight.Bold,
+                style = TextStyle(shadow = TextShadow)
+            )
+
+            Spacer(modifier = Modifier.height(16.dp))
 
             Image(
                 painter = painterResource(id = R.drawable.foto),
                 contentDescription = "Foto",
                 modifier = Modifier
-                    .size(220.dp)
+                    .size(240.dp)
                     .clip(CircleShape)
                     .border(3.dp, Color.White, CircleShape),
                 contentScale = ContentScale.Crop
             )
-
-            Spacer(modifier = Modifier.height(32.dp))
-
-            InfoField(label = "Nama", value = "Admaja Bahari", valueSize = 24.sp)
-
-            Spacer(modifier = Modifier.height(24.dp))
-
-            InfoField(label = "NIM", value = "20230140052", valueSize = 28.sp)
         }
-    }
-}
-
-@Composable
-private fun InfoField(
-    label: String,
-    value: String,
-    valueSize: TextUnit,
-    lineWidth: Dp = LineWidth
-) {
-    Column(horizontalAlignment = Alignment.CenterHorizontally) {
-        Text(
-            text = label,
-            color = YellowLogin,
-            fontSize = 18.sp,
-            fontWeight = FontWeight.Bold,
-            style = TextStyle(shadow = TextShadow)
-        )
-
-        Spacer(modifier = Modifier.height(4.dp))
-
-        Text(
-            text = value,
-            color = Color.White,
-            fontSize = valueSize,
-            fontWeight = FontWeight.Bold,
-            style = TextStyle(shadow = TextShadow)
-        )
-
-        Spacer(modifier = Modifier.height(4.dp))
-
-        Box(
-            modifier = Modifier
-                .width(lineWidth)
-                .height(2.dp)
-                .background(YellowLogin)
-        )
     }
 }
